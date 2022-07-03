@@ -5,11 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Hello</h1>
-
+    <div class="weather-container">
+        <div class="w-main">
+            <div class="w-main__header">
+                <span class="nav-arrow">
+                    <i class="el-icon-back hidden"></i>
+                    <span>&#8451</span>
+                </span>
+                <span class="nav-menu">
+                    <i class="el-icon-more"></i>
+                    
+                </span>
+                <div class="w-main__header__location">
+                    <i class="el-icon-location"></i>
+                    <span class="w-main__header__location__name" id="w-location">
+                        Ha Noi
+                    </span>
+                </div>
+                <div id="w-loading" class="w-main__header__loading">
+                    <i class="el-icon-loading"></i>
+                    <span>Loading...</span>
+                </div>
+                <div class="w-main__header__img-state">
+                    <img src="./assets/svg/party-sunny.svg" alt="weather" srcset="" id="w-img-state">
+                </div>
+                <div class="w-main__header__temp">
+                    <span id="w-temp">29</span>
+                </div>
+                <div class="w-main__header__status">
+                    <span id="w-status">Cloudy</span>
+                </div>
+                <div class="w-main__header__time">
+                    <span id="w-today">Sunday, July 3 2022</span>
+                </div>
+                <span class="w-main__header__brk-line"></span>
+                <div class="w-main__header__property">
+                    <div class="w-main__header__property-item">
+                        <i class="fas fa-wind"></i>
+                        <span class="value" id="w-wind">13 km/h</span>
+                        <span class="label">Wind</span>
+                    </div>
+                    <div class="w-main__header__property-item">
+                        <i class="fas fa-tint"></i>
+                        <span class="value" id="w-humidity">65 %</span>
+                        <span class="label">Humidity</span>
+                    </div>
+                    <div class="w-main__header__property-item">
+                        <i class="fas fa-temperature-high"></i>
+                        <span class="value" id="w-max-temp">40 &#8451</span>
+                        <span class="label">Highest</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-main__footer">
+                <div class="w-main__footer-top-wrapper">
+                    <div class="w-main__footer-top-wrapper__label">
+                        <span>4 days</span>
+                    </div>
+                    <div class="w-main__footer-top-wrapper__weekly-nav">
+                        <span> 7 days </span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <ul class="w-main__footer-slider">
+                    <li class="w-main__footer-slider__item">
+                        <span class="fs-item__humidity">32&#186</span>
+                        <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather_i" srcset="">
+                        <span class="fs-item__time">July 3</span>
+                    </li>
+                    <li class="w-main__footer-slider__item">
+                        <span class="fs-item__humidity">32&#186</span>
+                        <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather_i" srcset="">
+                        <span class="fs-item__time">July 4</span>
+                    </li>
+                    <li class="w-main__footer-slider__item">
+                        <span class="fs-item__humidity">33&#186</span>
+                        <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather_i" srcset="">
+                        <span class="fs-item__time">July 5</span>
+                    </li>
+                    <li class="w-main__footer-slider__item">
+                        <span class="fs-item__humidity">33&#186</span>
+                        <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather_i" srcset="">
+                        <span class="fs-item__time">July 6</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </body>
 </html>
