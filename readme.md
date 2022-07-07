@@ -11,7 +11,7 @@
 - _openweathermap APIs_
 
 ### URL
-- [Ani-Weather] : https://dashboard.heroku.com/apps/ani-weather
+- [Ani-Weather] : https://ani-weather.herokuapp.com/
 
 ## How to make it!
 
@@ -65,6 +65,6 @@ MIT
 **Goodluck!**
 
 
-   [ani-weather]: <https://dashboard.heroku.com/apps/ani-weather>
+   [ani-weather]: <https://ani-weather.herokuapp.com/>
 [![N|Solid](https://aniphoto.herokuapp.com/photo/61e92456437e3cd73c7ca73e)](https://nodesource.com/products/nsolid)
 
