@@ -1,5 +1,17 @@
 require("dotenv").config();
 const axios = require("axios");
+const fs = require("fs");
+
+function counterConnection() {
+  const data = fs.readFileSync("./src/logs/site-data.json", "utf8");
+  const siteData = JSON.parse(data);
+  let newData = {
+    title: "Weather App",
+    counter: siteData.counter + 1,
+  };
+  fs.writeFileSync("./src/logs/site-data.json", JSON.stringify(newData));
+  console.log(JSON.stringify(newData));
+}
 
 const routes = function (app) {
   app.get("/", (req, res) => {
@@ -21,12 +33,12 @@ const routes = function (app) {
         throw Error("No city or coordinates provided");
       }
       console.log(weatherUrl);
-
+      counterConnection();
       const result = await axios({
         method: "get",
         url: weatherUrl,
       });
-      console.log(result);
+      // console.log(result);
       if (result?.status === 200) {
         res.json({
           success: true,
@@ -42,6 +54,26 @@ const routes = function (app) {
       res.json({
         success: false,
         message: error.message,
+      });
+    }
+  });
+
+  app.get("/logs", (req, res) => {
+    try {
+      const data = fs.readFileSync("./src/logs/site-data.json", "utf8");
+      const siteData = JSON.parse(data);
+      res.json({
+        success: true,
+        message: "SUCCESS",
+        status: 200,
+        data: siteData,
+      });
+    } catch (error) {
+      console.log(">>> / file: index.js / line 65 / error", error);
+      res.json({
+        success: false,
+        status: 249,
+        message: "SERVER ERROR",
       });
     }
   });
